@@ -13,6 +13,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
+    /**
+     * Si queremos que nuestro filtro solo se aplique a ciertos patrones de URL,
+     * debemos registrar un @Bean de tipo FilterRegistrationBean
+     */
+
     //NOTA: Si no se especifica el orden, spring lo manda al final de la cola
     @Bean
     public FilterRegistrationBean<MyFilter> myFilter() {
